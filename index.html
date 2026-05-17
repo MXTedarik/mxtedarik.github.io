@@ -654,6 +654,20 @@
       gap: 18px;
     }
 
+    .product-group-title {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      color: #f2f2f2;
+      background: linear-gradient(135deg, rgba(235, 235, 235, .10), rgba(255, 255, 255, .035));
+      border: 1px solid rgba(235, 235, 235, .16);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+
     .product {
       overflow: hidden;
       border-radius: 20px;
@@ -1551,9 +1565,9 @@
 
   <section class="metrics" aria-label="MX Tedarik özet bilgiler">
     <div class="container metrics-grid">
-      <div class="metric"><div><strong>93+</strong><span>Ürün Paketi</span></div></div>
+      <div class="metric"><div><strong>140+</strong><span>Ürün Paketi</span></div></div>
       <div class="metric"><div><strong>7/24</strong><span>Destek</span></div></div>
-      <div class="metric"><div><strong>17</strong><span>Platform</span></div></div>
+      <div class="metric"><div><strong>19</strong><span>Platform</span></div></div>
       <div class="metric"><div><strong>%100</strong><span>Hızlı Teslim</span></div></div>
     </div>
   </section>
@@ -1752,6 +1766,8 @@
       canva: `<img src="assets/logos/canva.png" alt="">`,
       spotify: `<img src="assets/logos/spotify.png" alt="">`,
       steam: `<img src="assets/logos/steam.png" alt="">`,
+      valorant: `<img src="assets/logos/valorant.png" alt="">`,
+      lol: `<img src="assets/logos/lol.png" alt="">`,
       capcut: `<img src="assets/logos/capcut.png" alt="">`,
       minecraft: `<img src="assets/logos/minecraft.png" alt="">`,
       xbox: `<img src="assets/logos/xbox.png" alt="">`,
@@ -1900,6 +1916,84 @@
           ["2004 Kurulumlu Steam Hesabı", "Mail Değişen", "450₺", "2004 kurulumlu hesap"],
           ["2003 Kurulumlu Steam Hesabı", "Mail Değişen", "700₺", "2003 kurulumlu hesap"],
           ["İstediğiniz Oyunlu Steam Hesabı", "Online + Mail Değişen", "?₺", "Fiyat için Instagram üzerinden iletişime geçiniz"]
+        ]
+      },
+      {
+        id: "valorant",
+        title: "Valorant",
+        mark: "VL",
+        logo: logos.valorant,
+        desc: "TR ranklı, levelli ve skinli Valorant hesapları",
+        colors: ["#ff4655", "#111111"],
+        notice: "Mail değişen, satın aldığınız oyun hesabının bağlı olduğu e-posta adresini tamamen kendi e-postanızla değiştirebileceğiniz anlamına gelir.",
+        productGroups: [
+          { id: "tr-rankli", title: "TR Ranklı Hesaplar", tag: "TR Ranklı" },
+          { id: "tr-levelli", title: "TR Levelli Hesaplar", tag: "TR Levelli" },
+          { id: "tr-skinli", title: "TR Skinli Hesaplar", tag: "TR Skinli" }
+        ],
+        products: [
+          ["Diamond Elo Mail Değişen Hesap", "TR Ranklı", "900₺", "Mail Değişen"],
+          ["Plat Mail Değişen Hesap", "TR Ranklı", "700₺", "Mail Değişen"],
+          ["Altın Mail Değişen Hesap", "TR Ranklı", "550₺", "Mail Değişen"],
+          ["Gümüş Mail Değişen Hesap", "TR Ranklı", "450₺", "Mail Değişen"],
+          ["Bronz Mail Değişen Hesap", "TR Ranklı", "400₺", "Mail Değişen"],
+          ["Demir Mail Değişen Hesap", "TR Ranklı", "400₺", "Mail Değişen"],
+          ["Random Ranklı Mail Değişen Hesap", "TR Ranklı", "350₺", "Mail Değişen"],
+          ["+19 Level Mail Değişen Hesap", "TR Levelli", "350₺", "Mail Değişen"],
+          ["+18 Level Mail Değişen Hesap", "TR Levelli", "300₺", "Mail Değişen"],
+          ["17 Level Mail Değişen Hesap", "TR Levelli", "250₺", "Mail Değişen"],
+          ["16+ Level Mail Değişen Hesap", "TR Levelli", "200₺", "Mail Değişen"],
+          ["15+ Level Mail Değişen Hesap", "TR Levelli", "150₺", "Mail Değişen"],
+          ["14+ Level Mail Değişen Hesap", "TR Levelli", "140₺", "Mail Değişen"],
+          ["13+ Level Mail Değişen Hesap", "TR Levelli", "130₺", "Mail Değişen"],
+          ["10+ Level Mail Değişen Hesap", "TR Levelli", "120₺", "Mail Değişen"],
+          ["20-120 Skin Mail Değişen Hesap", "TR Skinli", "900₺", "Mail Değişen"],
+          ["10-120 Skin Mail Değişen Hesap", "TR Skinli", "700₺", "Mail Değişen"],
+          ["5-120 Skin Mail Değişen Hesap", "TR Skinli", "600₺", "Mail Değişen"],
+          ["50-120 Skin Garantili Random Hesap", "TR Skinli", "150₺", "Random hesap"],
+          ["20-120 Skin Garantili Random Hesap", "TR Skinli", "140₺", "Random hesap"],
+          ["10-120 Skin Garantili Random Hesap", "TR Skinli", "130₺", "Random hesap"]
+        ]
+      },
+      {
+        id: "league-of-legends",
+        title: "League of Legends",
+        mark: "LOL",
+        logo: logos.lol,
+        desc: "TR / EUW ve random sunucu skinli LoL hesapları",
+        colors: ["#c89b3c", "#091428"],
+        notice: "Mail değişen, satın aldığınız oyun hesabının bağlı olduğu e-posta adresini tamamen kendi e-postanızla değiştirebileceğiniz anlamına gelir.",
+        productGroups: [
+          { id: "tr-euw", title: "TR / EUW Hesaplar", tag: "TR / EUW" },
+          { id: "random-sunucu", title: "Random Sunucu Hesaplar", tag: "Random Sunucu" }
+        ],
+        products: [
+          ["300-850 Skin Mail Değişen Hesap", "TR / EUW", "8000₺", "Mail Değişen"],
+          ["250-850 Skin Mail Değişen Hesap", "TR / EUW", "6500₺", "Mail Değişen"],
+          ["200-850 Skin Mail Değişen Hesap", "TR / EUW", "5200₺", "Mail Değişen"],
+          ["150-850 Skin Mail Değişen Hesap", "TR / EUW", "4200₺", "Mail Değişen"],
+          ["100-850 Skin Mail Değişen Hesap", "TR / EUW", "3000₺", "Mail Değişen"],
+          ["50-850 Skin Mail Değişen Hesap", "TR / EUW", "2000₺", "Mail Değişen"],
+          ["40-850 Skin Mail Değişen Hesap", "TR / EUW", "1500₺", "Mail Değişen"],
+          ["30-850 Skin Mail Değişen Hesap", "TR / EUW", "1100₺", "Mail Değişen"],
+          ["20-850 Skin Mail Değişen Hesap", "TR / EUW", "900₺", "Mail Değişen"],
+          ["10-850 Skin Mail Değişen Hesap", "TR / EUW", "600₺", "Mail Değişen"],
+          ["5-850 Skin Mail Değişen Hesap", "TR / EUW", "400₺", "Mail Değişen"],
+          ["1-850 Skin Mail Değişen Hesap", "TR / EUW", "200₺", "Mail Değişen"],
+          ["30+ Level & 20+ Karakter Mail Değişen Hesap", "TR / EUW", "700₺", "Mail Değişen"],
+          ["20-120 Level & 1-30 Karakter Mail Değişen Hesap", "TR / EUW", "600₺", "Mail Değişen"],
+          ["300-850 Skin Mail Değişen Hesap", "Random Sunucu", "4000₺", "Mail Değişen"],
+          ["250-850 Skin Mail Değişen Hesap", "Random Sunucu", "3000₺", "Mail Değişen"],
+          ["200-850 Skin Mail Değişen Hesap", "Random Sunucu", "2000₺", "Mail Değişen"],
+          ["150-850 Skin Mail Değişen Hesap", "Random Sunucu", "1500₺", "Mail Değişen"],
+          ["100-850 Skin Mail Değişen Hesap", "Random Sunucu", "1000₺", "Mail Değişen"],
+          ["50-850 Skin Mail Değişen Hesap", "Random Sunucu", "700₺", "Mail Değişen"],
+          ["40-850 Skin Mail Değişen Hesap", "Random Sunucu", "600₺", "Mail Değişen"],
+          ["30-850 Skin Mail Değişen Hesap", "Random Sunucu", "500₺", "Mail Değişen"],
+          ["20-850 Skin Mail Değişen Hesap", "Random Sunucu", "400₺", "Mail Değişen"],
+          ["10-850 Skin Mail Değişen Hesap", "Random Sunucu", "250₺", "Mail Değişen"],
+          ["30+ Level & 20+ Karakter Mail Değişen Hesap", "Random Sunucu", "800₺", "Mail Değişen"],
+          ["20-120 Level & 20+ Karakter Mail Değişen Hesap", "Random Sunucu", "400₺", "Mail Değişen"]
         ]
       },
       {
@@ -2166,6 +2260,7 @@
       const article = document.createElement("article");
       article.className = "product";
       article.dataset.search = normalize(product.join(" "));
+      article.dataset.group = tag;
       article.style.setProperty("--c1", section.colors[0]);
       article.style.setProperty("--c2", section.colors[1]);
 
@@ -2210,7 +2305,25 @@
       `;
 
       const grid = sectionEl.querySelector(".grid");
-      section.products.forEach((product) => grid.append(productCard(section, product)));
+      if (section.productGroups) {
+        section.productGroups.forEach((group) => {
+          const heading = document.createElement("div");
+          heading.className = "product-group-title";
+          heading.dataset.groupTitle = group.id;
+          heading.textContent = group.title;
+          grid.append(heading);
+
+          section.products
+            .filter((product) => product[1] === group.tag)
+            .forEach((product) => {
+              const card = productCard(section, product);
+              card.dataset.productGroup = group.id;
+              grid.append(card);
+            });
+        });
+      } else {
+        section.products.forEach((product) => grid.append(productCard(section, product)));
+      }
       return sectionEl;
     };
 
@@ -2419,6 +2532,13 @@
           const isVisible = isCategoryMatch && isSearchMatch;
           card.hidden = !isVisible;
           if (isVisible) sectionVisibleCount += 1;
+        });
+
+        sectionEl.querySelectorAll("[data-group-title]").forEach((heading) => {
+          const groupId = heading.dataset.groupTitle;
+          const hasVisibleProducts = Array.from(sectionEl.querySelectorAll(`.product[data-product-group="${groupId}"]`))
+            .some((card) => !card.hidden);
+          heading.hidden = !hasVisibleProducts;
         });
 
         sectionEl.classList.toggle("is-hidden", sectionVisibleCount === 0);
