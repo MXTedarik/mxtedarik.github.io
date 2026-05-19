@@ -207,8 +207,60 @@
       overflow: hidden;
     }
 
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      opacity: .78;
+    }
+
+    .hero-particles span {
+      position: absolute;
+      left: var(--x);
+      bottom: -24px;
+      width: var(--s);
+      height: var(--s);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .92);
+      box-shadow:
+        0 0 12px rgba(255, 255, 255, .70),
+        0 0 30px rgba(255, 255, 255, .34),
+        0 0 64px rgba(255, 255, 255, .16);
+      animation: particleFloat var(--d) linear infinite;
+      animation-delay: var(--delay);
+    }
+
+    .hero-particles span:nth-child(3n) {
+      background: rgba(255, 255, 255, .58);
+      box-shadow:
+        0 0 10px rgba(255, 255, 255, .44),
+        0 0 26px rgba(255, 255, 255, .20);
+    }
+
+    .hero-particles span:nth-child(4n) {
+      filter: blur(.6px);
+    }
+
+    @keyframes particleFloat {
+      0% {
+        transform: translate3d(0, 0, 0) scale(.85);
+        opacity: 0;
+      }
+
+      12% {
+        opacity: .8;
+      }
+
+      100% {
+        transform: translate3d(var(--drift), -520px, 0) scale(1.15);
+        opacity: 0;
+      }
+    }
+
     .hero-grid {
       position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: minmax(0, 820px);
       gap: 20px;
@@ -1533,6 +1585,24 @@
   </header>
 
   <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-particles" aria-hidden="true">
+      <span style="--x:6%;--s:3px;--d:13s;--delay:-2s;--drift:42px"></span>
+      <span style="--x:12%;--s:5px;--d:18s;--delay:-9s;--drift:-38px"></span>
+      <span style="--x:18%;--s:2px;--d:15s;--delay:-5s;--drift:28px"></span>
+      <span style="--x:24%;--s:4px;--d:21s;--delay:-12s;--drift:-52px"></span>
+      <span style="--x:31%;--s:3px;--d:16s;--delay:-7s;--drift:34px"></span>
+      <span style="--x:37%;--s:6px;--d:24s;--delay:-14s;--drift:-22px"></span>
+      <span style="--x:43%;--s:2px;--d:14s;--delay:-4s;--drift:56px"></span>
+      <span style="--x:49%;--s:4px;--d:19s;--delay:-11s;--drift:-40px"></span>
+      <span style="--x:55%;--s:3px;--d:17s;--delay:-8s;--drift:30px"></span>
+      <span style="--x:61%;--s:5px;--d:23s;--delay:-16s;--drift:-58px"></span>
+      <span style="--x:67%;--s:2px;--d:15s;--delay:-6s;--drift:46px"></span>
+      <span style="--x:73%;--s:4px;--d:20s;--delay:-10s;--drift:-26px"></span>
+      <span style="--x:79%;--s:3px;--d:18s;--delay:-13s;--drift:52px"></span>
+      <span style="--x:85%;--s:5px;--d:25s;--delay:-18s;--drift:-44px"></span>
+      <span style="--x:91%;--s:2px;--d:16s;--delay:-3s;--drift:24px"></span>
+      <span style="--x:96%;--s:4px;--d:22s;--delay:-15s;--drift:-36px"></span>
+    </div>
     <div class="container hero-grid">
       <div>
         <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> 7/24 Dijital Tedarik</div>
@@ -1565,9 +1635,9 @@
 
   <section class="metrics" aria-label="MX Tedarik özet bilgiler">
     <div class="container metrics-grid">
-      <div class="metric"><div><strong>140+</strong><span>Ürün Paketi</span></div></div>
+      <div class="metric"><div><strong>150+</strong><span>Ürün Paketi</span></div></div>
       <div class="metric"><div><strong>7/24</strong><span>Destek</span></div></div>
-      <div class="metric"><div><strong>19</strong><span>Platform</span></div></div>
+      <div class="metric"><div><strong>20</strong><span>Platform</span></div></div>
       <div class="metric"><div><strong>%100</strong><span>Hızlı Teslim</span></div></div>
     </div>
   </section>
@@ -1774,6 +1844,7 @@
       windows: `<img src="assets/logos/windows.png" alt="">`,
       duolingo: `<img src="assets/logos/duolingo.png" alt="">`,
       brawlStars: `<img src="assets/logos/Brawl-Stars.png" alt="">`,
+      carParking: `<img src="assets/logos/CarParking.png" alt="">`,
       tiktok: `<img src="assets/logos/tiktok.png" alt="">`,
       instagram: `<img src="assets/logos/instagram.png" alt="">`
     };
@@ -2077,29 +2148,44 @@
         ]
       },
       {
+        id: "car-parking",
+        title: "Car Parking",
+        mark: "CP",
+        logo: logos.carParking,
+        desc: "Car Parking random hesap seçenekleri",
+        colors: ["#2f80ed", "#101820"],
+        products: [
+          ["Toprak Hesap", "Random Hesap", "50₺", "Car Parking hesabı"],
+          ["Altın Hesap", "Random Hesap", "80₺", "Car Parking hesabı"],
+          ["Elmas Hesap", "Random Hesap", "100₺", "Car Parking hesabı"],
+          ["Ruby Hesap", "Random Hesap", "125₺", "Car Parking hesabı"],
+          ["Ultra Hesap", "Random Hesap", "150₺", "Car Parking hesabı"]
+        ]
+      },
+      {
         id: "tiktok",
         title: "TikTok",
         mark: "TT",
         logo: logos.tiktok,
         desc: "TikTok sosyal medya hizmetleri",
         colors: ["#00f2ea", "#ff0050"],
-        notice: "İşlem öncesi hesap herkese açık olmalıdır. Gizli hesaplarda işlem sağlıklı ilerlemeyebilir.",
+        notice: "NOT: Hesabınızı herkese açık yapmalısınız. İşlem yapılırken hesabınız gizlideyse iadenizi alamazsınız.",
         products: [
-          ["1.000 Takipçi", "Telafisiz", "120₺", "Hızlı işlem"],
-          ["1.000 Takipçi", "7G Telafi", "130₺", "7 gün telafi"],
-          ["1.000 Takipçi", "30G Telafi", "150₺", "30 gün telafi"],
-          ["1.000 Takipçi", "365G Telafi", "190₺", "365 gün telafi"],
-          ["1.000 Beğeni", "30G Telafi", "50₺", "Video beğeni"],
-          ["1.000 Beğeni", "365G Telafi", "50₺", "Uzun telafi"],
-          ["1.000 İzlenme", "30G Telafi", "50₺", "Video izlenme"],
-          ["1.000 İzlenme", "365G Telafi", "50₺", "Uzun telafi"],
-          ["1.000 Rastgele Yorum", "Telafisiz", "180₺", "Yorum paketi"],
-          ["1.000 Yorum Beğenisi", "30G Telafi", "70₺", "Yorum etkileşimi"],
-          ["1.000 Kaydetme", "365G Telafi", "50₺", "Kaydetme paketi"],
-          ["1.000 Paylaşım", "365G Telafi", "150₺", "Paylaşım paketi"],
-          ["1.000 Repost", "30G Telafi", "150₺", "Repost paketi"],
-          ["1.000 Video İndirme", "30G Telafi", "100₺", "İndirme paketi"],
-          ["1.000 Hikaye Beğeni", "Telafisiz", "80₺", "Hikaye etkileşimi"]
+          ["1K Takipçi", "Telafisiz", "140₺", "Telafisiz"],
+          ["1K Takipçi", "7G♻️", "150₺", "7 gün telafi"],
+          ["1K Takipçi", "30G♻️", "180₺", "30 gün telafi"],
+          ["1K Takipçi", "365G♻️", "220₺", "365 gün telafi"],
+          ["1K Beğeni", "30G♻️", "50₺", "30 gün telafi"],
+          ["1K Beğeni", "365G♻️", "50₺", "365 gün telafi"],
+          ["1K İzlenme", "30G♻️", "50₺", "30 gün telafi"],
+          ["1K İzlenme", "365G♻️", "50₺", "365 gün telafi"],
+          ["1K Rastgele Yorum", "Telafisiz", "180₺", "Telafisiz"],
+          ["1K Yorum Beğenisi", "30G♻️", "80₺", "30 gün telafi"],
+          ["1K Kaydetme", "365G♻️", "50₺", "365 gün telafi"],
+          ["1K Paylaşım", "365G♻️", "150₺", "365 gün telafi"],
+          ["1K Repost", "30G♻️", "150₺", "30 gün telafi"],
+          ["1K Video İndirme", "30G♻️", "100₺", "30 gün telafi"],
+          ["1K Hikaye Beğeni", "Telafisiz", "80₺", "Telafisiz"]
         ]
       },
       {
@@ -2109,22 +2195,27 @@
         logo: logos.instagram,
         desc: "Instagram sosyal medya hizmetleri",
         colors: ["#e1306c", "#5b21b6"],
-        notice: "İşlem öncesi hesap herkese açık olmalıdır. Gizli hesaplarda işlem sağlıklı ilerlemeyebilir.",
+        notice: "NOT: Hesabınızı herkese açık yapmalısınız. İşlem yapılırken hesabınız gizlideyse iadenizi alamazsınız.",
         products: [
-          ["1.000 Yabancı Takipçi", "Telafisiz", "120₺", "Takipçi paketi"],
-          ["1.000 Yabancı Takipçi", "365G Telafi", "150₺", "Uzun telafi"],
-          ["1.000 Türk Takipçi", "30G Telafi", "400₺", "Türk takipçi"],
-          ["1.000 Yabancı Beğeni", "365G Telafi", "60₺", "Beğeni paketi"],
-          ["1.000 Türk Beğeni", "30G Telafi", "120₺", "Türk beğeni"],
-          ["1.000 İzlenme", "Telafisiz", "50₺", "Reels/video"],
-          ["1.000 Fotoğraf Görüntülenmesi", "Telafisiz", "50₺", "Görüntülenme"],
-          ["1.000 Rastgele Yabancı Yorum", "Telafisiz", "120₺", "Yorum paketi"],
-          ["1.000 Yorum Beğenisi", "365G Telafi", "200₺", "Yorum etkileşimi"],
-          ["1.000 Kaydetme", "Telafisiz", "60₺", "Kaydetme paketi"],
-          ["1.000 Paylaşım", "365G Telafi", "50₺", "Paylaşım paketi"],
-          ["1.000 Repost", "Telafisiz", "100₺", "Repost paketi"],
-          ["1.000 Türk Kanal Üyesi", "90G Telafi", "120₺", "Kanal üyesi"],
-          ["1.000 Canlı Yayın Beğeni", "Telafisiz", "120₺", "Canlı yayın"]
+          ["1K Takipçi", "Telafisiz", "100₺", "Telafisiz"],
+          ["1K Takipçi", "7G♻️", "120₺", "7 gün telafi"],
+          ["1K Takipçi", "30G♻️", "130₺", "30 gün telafi"],
+          ["1K Takipçi", "60G♻️", "140₺", "60 gün telafi"],
+          ["1K Takipçi", "90G♻️", "150₺", "90 gün telafi"],
+          ["1K Takipçi", "120G♻️", "180₺", "120 gün telafi"],
+          ["1K Yabancı Takipçi", "365G♻️", "200₺", "365 gün telafi"],
+          ["1K Türk Takipçi", "30G♻️", "550₺", "30 gün telafi"],
+          ["1K Yabancı Beğeni", "365G♻️", "50₺", "365 gün telafi"],
+          ["1K Türk Beğeni", "30G♻️", "120₺", "30 gün telafi"],
+          ["1K İzlenme", "Telafisiz", "50₺", "Telafisiz"],
+          ["1K Fotoğraf Görüntülenmesi", "Telafisiz", "50₺", "Telafisiz"],
+          ["1K Rastgele Yabancı Yorum", "Telafisiz", "120₺", "Telafisiz"],
+          ["1K Yorum Beğenisi", "365G♻️", "200₺", "365 gün telafi"],
+          ["1K Kaydetme", "Telafisiz", "50₺", "Telafisiz"],
+          ["1K Paylaşım", "365G♻️", "50₺", "365 gün telafi"],
+          ["1K Repost", "Telafisiz", "100₺", "Telafisiz"],
+          ["1K Türk Kanal Üyesi", "90G♻️", "120₺", "90 gün telafi"],
+          ["1K Canlı Yayın Beğeni", "Telafisiz", "120₺", "Telafisiz"]
         ]
       }
     ];
