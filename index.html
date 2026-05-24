@@ -857,6 +857,43 @@
       white-space: nowrap;
     }
 
+    .price-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .price-old {
+      color: var(--muted);
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: 1px;
+      text-decoration: line-through;
+      opacity: 0.65;
+    }
+
+    .discount-badge {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff4d4d, #c0000a);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      box-shadow: 0 4px 14px rgba(255, 0, 30, 0.35);
+      animation: pulseBadge 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulseBadge {
+      0%, 100% { box-shadow: 0 4px 14px rgba(255, 0, 30, 0.35); }
+      50% { box-shadow: 0 4px 22px rgba(255, 0, 30, 0.65); }
+    }
+
     .buy {
       min-height: 38px;
       display: inline-flex;
@@ -1860,12 +1897,12 @@
         colors: ["#1f2937", "#0f766e"],
         notice: "Sipariş öncesi ürün detayını ve teslimat şeklini Instagram üzerinden teyit ediniz.",
         products: [
-          ["ChatGPT Plus 4.0", "Ortak Hesap", "100₺", "Premium erişim"],
-          ["ChatGPT Plus 4.0", "Kişisel Hesap", "140₺", "Kişiye özel kullanım"],
-          ["ChatGPT Plus 5.2", "Ortak Hesap", "120₺", "Avantajlı paket"],
-          ["ChatGPT Plus 5.2", "Kişisel Hesap", "150₺", "Kişisel kullanım"],
-          ["ChatGPT Business", "Kendi Hesabınıza", "100₺", "Business seçenek"],
-          ["ChatGPT Business Kişisel", "Kişisel Hesap", "150₺", "Özel teslim"],
+          ["ChatGPT Plus 4.0", "Ortak Hesap", "60₺", "Premium erişim", "100₺"],
+          ["ChatGPT Plus 4.0", "Kişisel Hesap", "100₺", "Kişiye özel kullanım", "140₺"],
+          ["ChatGPT Plus 5.2", "Ortak Hesap", "80₺", "Avantajlı paket", "120₺"],
+          ["ChatGPT Plus 5.2", "Kişisel Hesap", "100₺", "Kişisel kullanım", "150₺"],
+          ["ChatGPT Business", "Kendi Hesabınıza", "80₺", "Business seçenek", "100₺"],
+          ["ChatGPT Business Kişisel", "Kişisel Hesap", "100₺", "Özel teslim", "150₺"],
           ["Otomatik Kod Sistemi", "1 Aylık · Lisanslı", "200₺", "Gmail'e otomatik teslim"],
           ["Otomatik Kod Sistemi", "Sınırsız · Lisanssız", "600₺", "7/24 otomatik teslim"]
         ]
@@ -1878,9 +1915,9 @@
         desc: "Exxen hesap ve kod ürünleri",
         colors: ["#f97316", "#3b1305"],
         products: [
-          ["Exxen Hesap", "1 Aylık", "70₺", "Dijital teslim"],
-          ["Exxen Hesap", "3 Aylık", "120₺", "Avantajlı paket"],
-          ["Exxen Kod", "3 Aylık Kod", "50₺", "Kod teslim"]
+          ["Exxen Hesap", "1 Aylık", "50₺", "Dijital teslim", "70₺"],
+          ["Exxen Hesap", "3 Aylık", "100₺", "Avantajlı paket", "120₺"],
+          ["Exxen Kod", "3 Aylık Kod", "40₺", "Kod teslim", "50₺"]
         ]
       },
       {
@@ -1891,8 +1928,8 @@
         desc: "Film ve dizi abonelikleri",
         colors: ["#7c3aed", "#1d0b3b"],
         products: [
-          ["BluTV Üyelik", "Üyelik", "60₺", "Dijital hesap"],
-          ["BluTV Üyelik", "Toplu Alım", "50₺", "Toplu fiyat"]
+          ["BluTV Üyelik", "Üyelik", "50₺", "Dijital hesap", "60₺"],
+          ["BluTV Üyelik", "Toplu Alım", "40₺", "Toplu fiyat", "50₺"]
         ]
       },
       {
@@ -1903,7 +1940,7 @@
         desc: "Netflix profil ve hesap seçenekleri",
         colors: ["#e50914", "#350607"],
         products: [
-          ["Netflix 1 Aylık", "Kişiye Özel Profil", "150₺", "Profil teslim"],
+          ["Netflix 1 Aylık", "Kişiye Özel Profil", "120₺", "Profil teslim", "150₺"],
           ["Netflix 1 Aylık", "Kişisel Hesap", "300₺", "Kişisel kullanım"]
         ]
       },
@@ -1915,8 +1952,8 @@
         desc: "Disney+ kişiye özel profil seçenekleri",
         colors: ["#113ccf", "#06133f"],
         products: [
-          ["1 Aylık Disney+", "Kişiye Özel Profil", "120₺", "Profil teslim"],
-          ["3 Aylık Disney+", "Kişiye Özel Profil", "150₺", "Profil teslim"]
+          ["1 Aylık Disney+", "Kişiye Özel Profil", "100₺", "Profil teslim", "120₺"],
+          ["3 Aylık Disney+", "Kişiye Özel Profil", "120₺", "Profil teslim", "150₺"]
         ]
       },
       {
@@ -1927,8 +1964,8 @@
         desc: "Gemini Pro ve aile premium seçenekleri",
         colors: ["#4285f4", "#7c3aed"],
         products: [
-          ["1 Aylık Gemini Pro", "Gmailinize", "100₺", "Gmail hesabınıza teslim"],
-          ["Gemini Aile Premium", "Premium", "150₺", "Aile premium seçenek"]
+          ["1 Aylık Gemini Pro", "Gmailinize", "80₺", "Gmail hesabınıza teslim", "100₺"],
+          ["Gemini Aile Premium", "Premium", "100₺", "Aile premium seçenek", "150₺"]
         ]
       },
       {
@@ -1940,10 +1977,10 @@
         colors: ["#00c4cc", "#7d2ae8"],
         products: [
           ["Canva Okul", "Okul", "700₺", "Canva okul paketi"],
-          ["Canva Yönetici Ekibi", "Gmailinize", "250₺", "Yönetici ekibi, öğretmen ve öğrenci ekleyebilirsiniz"],
-          ["Canva Öğretmen Hesabı", "Gmailinize", "120₺", "Öğretmen ve öğrenci ekleyebilirsiniz"],
-          ["Canva Öğrenci Sınırsız", "Gmailinize", "100₺", "Sınırsız öğrenci paketi"],
-          ["Canva Premium", "Gmailinize", "110₺", "Premium paket"]
+          ["Canva Yönetici Ekibi", "Gmailinize", "200₺", "Yönetici ekibi, öğretmen ve öğrenci ekleyebilirsiniz", "250₺"],
+          ["Canva Öğretmen Hesabı", "Gmailinize", "100₺", "Öğretmen ve öğrenci ekleyebilirsiniz", "120₺"],
+          ["Canva Öğrenci Sınırsız", "Gmailinize", "80₺", "Sınırsız öğrenci paketi", "100₺"],
+          ["Canva Premium", "Gmailinize", "80₺", "Premium paket", "110₺"]
         ]
       },
       {
@@ -1954,9 +1991,9 @@
         desc: "Spotify Premium paketleri",
         colors: ["#1db954", "#062513"],
         products: [
-          ["Spotify Premium", "3 Ay Garantili", "80₺", "3. ay için 99₺ ücret alır"],
-          ["Spotify Premium 1 Aylık", "Kendi Hesabınıza", "50₺", "Gmail'e davet gönderilir"],
-          ["Spotify Premium", "4 Ay Garantili", "100₺", "99₺ ücret istemez"]
+          ["Spotify Premium", "3 Ay Garantili", "60₺", "3. ay için 99₺ ücret alır", "80₺"],
+          ["Spotify Premium 1 Aylık", "Kendi Hesabınıza", "60₺", "Gmail'e davet gönderilir"],
+          ["Spotify Premium", "4 Ay Garantili", "80₺", "99₺ ücret istemez", "100₺"]
         ]
       },
       {
@@ -1967,9 +2004,9 @@
         desc: "YouTube Premium ve aile premium seçenekleri",
         colors: ["#ff0033", "#3b0a0a"],
         products: [
-          ["YouTube Premium", "1 Aylık", "40₺", "Kendi hesabınıza"],
-          ["YouTube Aile Premium", "Aile Premium", "100₺", "Aile premium paket"],
-          ["YouTube Premium Kod", "3 Aylık Kod", "100₺", "Kod teslim"]
+          ["YouTube Premium", "1 Aylık", "30₺", "Kendi hesabınıza", "40₺"],
+          ["YouTube Aile Premium", "Aile Premium", "80₺", "Aile premium paket", "100₺"],
+          ["YouTube Premium Kod", "3 Aylık Kod", "80₺", "Kod teslim", "100₺"]
         ]
       },
       {
@@ -1980,26 +2017,26 @@
         desc: "Random, oyunlu ve eski kurulumlu Steam hesapları",
         colors: ["#1b2838", "#66c0f4"],
         products: [
-          ["Random Hesap", "Random Hesap", "20₺", "Steam hesabı"],
-          ["İstediğiniz 1 Oyun", "1 Oyun", "50₺", "Seçtiğiniz oyun"],
-          ["İstediğiniz 2 Oyun", "2 Oyun", "70₺", "Seçtiğiniz oyunlar"],
-          ["İstediğiniz 3 Oyun", "3 Oyun", "100₺", "Seçtiğiniz oyunlar"],
-          ["İstediğiniz 4 Oyun", "4 Oyun", "120₺", "Seçtiğiniz oyunlar"],
-          ["İstediğiniz 5 Oyun", "5 Oyun", "150₺", "Seçtiğiniz oyunlar"],
-          ["Popüler Oyunlu Hesap", "Mail Değişen", "100₺", "Popüler oyunlu Steam hesabı"],
-          ["5$ Yatırılmış Trade Bansız Hesap", "Mail Değişen", "200₺", "Trade bansız Steam hesabı"],
-          ["5$ Yatırılmış Trade Bansız Hesap", "TR + Mail Değişen", "250₺", "TR ve trade bansız Steam hesabı"],
+          ["Random Hesap", "Random Hesap", "10₺", "Steam hesabı", "20₺"],
+          ["İstediğiniz 1 Oyun", "1 Oyun", "40₺", "Seçtiğiniz oyun", "50₺"],
+          ["İstediğiniz 2 Oyun", "2 Oyun", "60₺", "Seçtiğiniz oyunlar", "70₺"],
+          ["İstediğiniz 3 Oyun", "3 Oyun", "80₺", "Seçtiğiniz oyunlar", "100₺"],
+          ["İstediğiniz 4 Oyun", "4 Oyun", "100₺", "Seçtiğiniz oyunlar", "120₺"],
+          ["İstediğiniz 5 Oyun", "5 Oyun", "120₺", "Seçtiğiniz oyunlar", "150₺"],
+          ["Popüler Oyunlu Hesap", "Mail Değişen", "80₺", "Popüler oyunlu Steam hesabı", "100₺"],
+          ["5$ Yatırılmış Trade Bansız Hesap", "Mail Değişen", "150₺", "Trade bansız Steam hesabı", "200₺"],
+          ["5$ Yatırılmış Trade Bansız Hesap", "TR + Mail Değişen", "220₺", "TR ve trade bansız Steam hesabı", "250₺"],
           ["+10 Oyunlu Steam Hesabı", "Mail Değişen", "100₺", "10+ oyunlu hesap"],
-          ["+20 Oyunlu Steam Hesabı", "Mail Değişen", "150₺", "20+ oyunlu hesap"],
-          ["+50 Oyunlu Steam Hesabı", "Oyunlu Hesap", "200₺", "50+ oyunlu hesap"],
-          ["2010 Kurulumlu Steam Hesabı", "Mail Değişen", "100₺", "2010 kurulumlu hesap"],
-          ["2009 Kurulumlu Steam Hesabı", "Mail Değişen", "150₺", "2009 kurulumlu hesap"],
-          ["2008 Kurulumlu Steam Hesabı", "Mail Değişen", "170₺", "2008 kurulumlu hesap"],
-          ["2007 Kurulumlu Steam Hesabı", "Mail Değişen", "200₺", "2007 kurulumlu hesap"],
+          ["+20 Oyunlu Steam Hesabı", "Mail Değişen", "120₺", "20+ oyunlu hesap", "150₺"],
+          ["+50 Oyunlu Steam Hesabı", "Oyunlu Hesap", "150₺", "50+ oyunlu hesap", "200₺"],
+          ["2010 Kurulumlu Steam Hesabı", "Mail Değişen", "80₺", "2010 kurulumlu hesap", "100₺"],
+          ["2009 Kurulumlu Steam Hesabı", "Mail Değişen", "120₺", "2009 kurulumlu hesap", "150₺"],
+          ["2008 Kurulumlu Steam Hesabı", "Mail Değişen", "150₺", "2008 kurulumlu hesap", "170₺"],
+          ["2007 Kurulumlu Steam Hesabı", "Mail Değişen", "180₺", "2007 kurulumlu hesap", "200₺"],
           ["2006 Kurulumlu Steam Hesabı", "Mail Değişen", "220₺", "2006 kurulumlu hesap"],
-          ["2005 Kurulumlu Steam Hesabı", "Mail Değişen", "350₺", "2005 kurulumlu hesap"],
-          ["2004 Kurulumlu Steam Hesabı", "Mail Değişen", "450₺", "2004 kurulumlu hesap"],
-          ["2003 Kurulumlu Steam Hesabı", "Mail Değişen", "700₺", "2003 kurulumlu hesap"],
+          ["2005 Kurulumlu Steam Hesabı", "Mail Değişen", "320₺", "2005 kurulumlu hesap", "350₺"],
+          ["2004 Kurulumlu Steam Hesabı", "Mail Değişen", "420₺", "2004 kurulumlu hesap", "450₺"],
+          ["2003 Kurulumlu Steam Hesabı", "Mail Değişen", "650₺", "2003 kurulumlu hesap", "700₺"],
           ["İstediğiniz Oyunlu Steam Hesabı", "Online + Mail Değişen", "?₺", "Fiyat için Instagram üzerinden iletişime geçiniz"]
         ]
       },
@@ -2089,8 +2126,8 @@
         desc: "Video düzenleme premium paketleri",
         colors: ["#a855f7", "#2e0b48"],
         products: [
-          ["CapCut Premium 1 Aylık", "Ortak", "100₺", "Ortak kullanım"],
-          ["CapCut Premium 1 Aylık", "Kişiye Özel", "150₺", "Özel kullanım"]
+          ["CapCut Premium 1 Aylık", "Ortak", "90₺", "Ortak kullanım", "100₺"],
+          ["CapCut Premium 1 Aylık", "Kişiye Özel", "120₺", "Özel kullanım", "150₺"]
         ]
       },
       {
@@ -2102,10 +2139,10 @@
         colors: ["#3ba55d", "#5b3718"],
         notice: "Not: Microsoft ile giriş yapmanız gerekir. Her 1 adet alım için 1 giriş hakkı verilir.",
         products: [
-          ["Minecraft Hesap", "1 Aylık", "100₺", "Microsoft ile giriş"],
-          ["Minecraft Hesap", "3 Aylık", "200₺", "Microsoft ile giriş"],
-          ["Minecraft Hesap", "12 Aylık", "300₺", "Microsoft ile giriş"],
-          ["Optifine.net Pelerinli Hesap", "Pelerinli Hesap", "80₺", "Optifine.net hesabı"]
+          ["Minecraft Hesap", "1 Aylık", "80₺", "Microsoft ile giriş", "100₺"],
+          ["Minecraft Hesap", "3 Aylık", "150₺", "Microsoft ile giriş", "200₺"],
+          ["Minecraft Hesap", "12 Aylık", "200₺", "Microsoft ile giriş", "300₺"],
+          ["Optifine.net Pelerinli Hesap", "Pelerinli Hesap", "50₺", "Optifine.net hesabı", "80₺"]
         ]
       },
       {
@@ -2117,10 +2154,10 @@
         colors: ["#107c10", "#043b10"],
         notice: "Her 1 adet alım için 1 giriş hakkı verilir.",
         products: [
-          ["Gamepass Ultimate", "1 Aylık", "100₺", "Xbox Gamepass Ultimate"],
-          ["Gamepass Ultimate", "3 Aylık", "150₺", "Xbox Gamepass Ultimate"],
-          ["Gamepass Ultimate", "6 Aylık", "200₺", "Xbox Gamepass Ultimate"],
-          ["Gamepass Ultimate", "12 Aylık", "250₺", "Xbox Gamepass Ultimate"]
+          ["Gamepass Ultimate", "1 Aylık", "80₺", "Xbox Gamepass Ultimate", "100₺"],
+          ["Gamepass Ultimate", "3 Aylık", "100₺", "Xbox Gamepass Ultimate", "150₺"],
+          ["Gamepass Ultimate", "6 Aylık", "150₺", "Xbox Gamepass Ultimate", "200₺"],
+          ["Gamepass Ultimate", "12 Aylık", "200₺", "Xbox Gamepass Ultimate", "250₺"]
         ]
       },
       {
@@ -2131,7 +2168,7 @@
         desc: "Windows 10 / 11 Pro lisans anahtarı",
         colors: ["#0078d4", "#0f172a"],
         products: [
-          ["Windows 10 / 11 Pro Key", "Windows Key", "150₺", "Dijital lisans anahtarı"]
+          ["Windows 10 / 11 Pro Key", "Windows Key", "120₺", "Dijital lisans anahtarı", "150₺"]
         ]
       },
       {
@@ -2142,8 +2179,8 @@
         desc: "Duolingo öğretmenlik ve öğrenci paketleri",
         colors: ["#58cc02", "#1f7a0f"],
         products: [
-          ["Duolingo Kendi Hesabına Öğretmenlik", "Öğretmenlik", "250₺", "50 öğrenci davet edebilirsiniz"],
-          ["Duolingo Öğrenci", "Öğrenci", "100₺", "Öğrenci paketi"]
+          ["Duolingo Kendi Hesabına Öğretmenlik", "Öğretmenlik", "220₺", "50 öğrenci davet edebilirsiniz", "250₺"],
+          ["Duolingo Öğrenci", "Öğrenci", "80₺", "Öğrenci paketi", "100₺"]
         ]
       },
       {
@@ -2155,10 +2192,10 @@
         colors: ["#f9b208", "#d92323"],
         notice: "Hesaplardan elmas çıkma şansı vardır, kupalar random hesaplardır. Hesapların isim değiştirme hakları ücretsizdir.",
         products: [
-          ["Yıldız Shelly Garantili Hesap", "Garantili Hesap", "350₺", "Brawl Stars hesap"],
-          ["3 Efsanevi Skin Garantili Hesap", "3 Efsanevi Skin", "250₺", "Skin garantili hesap"],
-          ["3 Efsanevi + 1 Hiperşarj Skin Garantili Hesap", "3 Efsanevi + 1 Hiperşarj", "320₺", "Skin garantili hesap"],
-          ["3 Efsanevi + 2 Hiperşarj Skin Garantili Hesap", "3 Efsanevi + 2 Hiperşarj", "450₺", "Skin garantili hesap"]
+          ["Yıldız Shelly Garantili Hesap", "Garantili Hesap", "320₺", "Brawl Stars hesap", "350₺"],
+          ["3 Efsanevi Skin Garantili Hesap", "3 Efsanevi Skin", "220₺", "Skin garantili hesap", "250₺"],
+          ["3 Efsanevi + 1 Hiperşarj Skin Garantili Hesap", "3 Efsanevi + 1 Hiperşarj", "300₺", "Skin garantili hesap", "320₺"],
+          ["3 Efsanevi + 2 Hiperşarj Skin Garantili Hesap", "3 Efsanevi + 2 Hiperşarj", "420₺", "Skin garantili hesap", "450₺"]
         ]
       },
       {
@@ -2169,11 +2206,11 @@
         desc: "Car Parking random hesap seçenekleri",
         colors: ["#2f80ed", "#101820"],
         products: [
-          ["Toprak Hesap", "Random Hesap", "50₺", "Car Parking hesabı"],
-          ["Altın Hesap", "Random Hesap", "80₺", "Car Parking hesabı"],
-          ["Elmas Hesap", "Random Hesap", "100₺", "Car Parking hesabı"],
-          ["Ruby Hesap", "Random Hesap", "125₺", "Car Parking hesabı"],
-          ["Ultra Hesap", "Random Hesap", "150₺", "Car Parking hesabı"]
+          ["Toprak Hesap", "Random Hesap", "40₺", "Car Parking hesabı", "50₺"],
+          ["Altın Hesap", "Random Hesap", "70₺", "Car Parking hesabı", "80₺"],
+          ["Elmas Hesap", "Random Hesap", "80₺", "Car Parking hesabı", "100₺"],
+          ["Ruby Hesap", "Random Hesap", "100₺", "Car Parking hesabı", "125₺"],
+          ["Ultra Hesap", "Random Hesap", "120₺", "Car Parking hesabı", "150₺"]
         ]
       },
       {
@@ -2185,10 +2222,10 @@
         colors: ["#00f2ea", "#ff0050"],
         notice: "NOT: Hesabınızı herkese açık yapmalısınız. İşlem yapılırken hesabınız gizlideyse iadenizi alamazsınız.",
         products: [
-          ["1K Takipçi", "Telafisiz", "140₺", "Telafisiz"],
-          ["1K Takipçi", "7G♻️", "150₺", "7 gün telafi"],
-          ["1K Takipçi", "30G♻️", "180₺", "30 gün telafi"],
-          ["1K Takipçi", "365G♻️", "220₺", "365 gün telafi"],
+          ["1K Takipçi", "Telafisiz", "120₺", "Telafisiz", "140₺"],
+          ["1K Takipçi", "7G♻️", "130₺", "7 gün telafi", "150₺"],
+          ["1K Takipçi", "30G♻️", "150₺", "30 gün telafi", "180₺"],
+          ["1K Takipçi", "365G♻️", "200₺", "365 gün telafi", "220₺"],
           ["1K Beğeni", "30G♻️", "50₺", "30 gün telafi"],
           ["1K Beğeni", "365G♻️", "50₺", "365 gün telafi"],
           ["1K İzlenme", "30G♻️", "50₺", "30 gün telafi"],
@@ -2212,12 +2249,12 @@
         notice: "NOT: Hesabınızı herkese açık yapmalısınız. İşlem yapılırken hesabınız gizlideyse iadenizi alamazsınız.",
         products: [
           ["1K Takipçi", "Telafisiz", "100₺", "Telafisiz"],
-          ["1K Takipçi", "7G♻️", "120₺", "7 gün telafi"],
-          ["1K Takipçi", "30G♻️", "130₺", "30 gün telafi"],
-          ["1K Takipçi", "60G♻️", "140₺", "60 gün telafi"],
-          ["1K Takipçi", "90G♻️", "150₺", "90 gün telafi"],
-          ["1K Takipçi", "120G♻️", "180₺", "120 gün telafi"],
-          ["1K Yabancı Takipçi", "365G♻️", "200₺", "365 gün telafi"],
+          ["1K Takipçi", "7G♻️", "100₺", "7 gün telafi", "120₺"],
+          ["1K Takipçi", "30G♻️", "120₺", "30 gün telafi", "130₺"],
+          ["1K Takipçi", "60G♻️", "130₺", "60 gün telafi", "140₺"],
+          ["1K Takipçi", "90G♻️", "140₺", "90 gün telafi", "150₺"],
+          ["1K Takipçi", "120G♻️", "150₺", "120 gün telafi", "180₺"],
+          ["1K Yabancı Takipçi", "365G♻️", "180₺", "365 gün telafi", "200₺"],
           ["1K Türk Takipçi", "30G♻️", "550₺", "30 gün telafi"],
           ["1K Yabancı Beğeni", "365G♻️", "50₺", "365 gün telafi"],
           ["1K Türk Beğeni", "30G♻️", "120₺", "30 gün telafi"],
@@ -2361,13 +2398,26 @@
     };
 
     const productCard = (section, product) => {
-      const [name, tag, price, detail] = product;
+      const [name, tag, price, detail, oldPrice] = product;
       const article = document.createElement("article");
       article.className = "product";
       article.dataset.search = normalize(product.join(" "));
       article.dataset.group = tag;
       article.style.setProperty("--c1", section.colors[0]);
       article.style.setProperty("--c2", section.colors[1]);
+
+      let priceHtml = `<div class="price">${price}</div>`;
+      if (oldPrice) {
+        const oldNum = parseInt(oldPrice.replace(/\D/g, ""), 10);
+        const newNum = parseInt(price.replace(/\D/g, ""), 10);
+        const discountPct = Math.round((1 - newNum / oldNum) * 100);
+        priceHtml = `
+          <div class="price-block">
+            <span class="discount-badge">%${discountPct} İndirim!</span>
+            <div class="price">${price}</div>
+            <div class="price-old">${oldPrice}</div>
+          </div>`;
+      }
 
       article.innerHTML = `
         <div class="product-media" aria-hidden="true">
@@ -2379,7 +2429,7 @@
           <h3 class="product-name">${name}</h3>
           <p class="product-detail">${detail}</p>
           <div class="product-bottom">
-            <div class="price">${price}</div>
+            ${priceHtml}
             <a class="buy" href="${ORDER_LINK}" target="_blank" rel="noopener noreferrer" aria-label="${name} sipariş ver">Satın Al</a>
           </div>
         </div>
